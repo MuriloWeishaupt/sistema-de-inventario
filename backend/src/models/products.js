@@ -1,30 +1,30 @@
-import { DataTypes } from 'sequelize';
-import sequelize from '../database/db.js'
+import { model, mongoose, Schema } from 'mongoose'
 
-const Product = sequelize.define('Product', {
+const mongoSchema = new Schema({
     name: {
-        type: DataTypes.STRING,
-        allowNull: false,
+        type: String,
+        required: true,
+    },
+
+    brand: {
+        type: String,
+        required:true,
     },
 
     quantity: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
+        type: Number,
+        required: true,
     },
-
     price: {
-        type: DataTypes.FLOAT,
-        allowNull: false
+        type: Number,
+        required: true,
     },
-
     description: {
-        type: DataTypes.STRING,
-        allowNull: false,
+        type: String,
+        required: true,
     },
 });
 
-await sequelize.sync();
-
-console.log('Tabela de produtos sincronizada!')
+const Product = mongoose.model('Product', mongoSchema)
 
 export default Product
