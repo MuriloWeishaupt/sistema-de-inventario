@@ -64,6 +64,17 @@ body {
     margin-right: 5px;
     font-weight: bold;
   }
+
+  .botaoCadastra {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    margin-bottom: 30px;
+  }
+
+  .botaoCadastra button {
+    border-radius: 5px;
+  }
   
   button:hover {
     opacity: 0.8;

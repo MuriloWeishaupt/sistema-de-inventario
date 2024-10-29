@@ -1,11 +1,14 @@
 import { useState, useEffect } from 'react';
 import './QuadroProdutos.css'
+import Cadastra from './Cadastra';
+import { useNavigate } from 'react-router-dom'
 
 function ProductsList() {
   const [products, setProducts] = useState([]);
   const [editingProduct, setEditingProduct] = useState(null);
   const [editedFields, setEditedFields] = useState({});
   const [totalValue, setTotalValue] = useState(0);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -157,7 +160,13 @@ function ProductsList() {
         </tbody>
       </table>
       <h3>Valor Total do Inventário: R$ {totalValue.toFixed(2)}</h3>
+      <div className='botaoCadastra'>
+        <button  onClick={() => navigate('/cadastra')}>
+          Cadastrar mais produtos
+        </button>
+      </div>
     </div>
+    
   );
 }
 

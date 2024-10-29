@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import './Cadastra.css'
+import { useNavigate } from 'react-router-dom'
+import ProductsList from './QuadroProdutos'
 
 function Cadastra() {
 
@@ -8,6 +10,7 @@ function Cadastra() {
     const [quantity, setQuantity] = useState('')
     const [price, setPrice] = useState('')
     const [description, setDescription] = useState('')
+    const navigate = useNavigate()
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -94,6 +97,11 @@ function Cadastra() {
                         <button type="submit" >Cadastrar</button>
                     </div>
                 </form>
+            </div>
+            <div className='listaBotao'>
+                <button onClick={() => navigate('/inventario')}>
+                    Verificar inventário de Produtos
+                </button>
             </div>
         </div>
     )
