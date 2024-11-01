@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import './QuadroProdutos.css'
 import Cadastra from './Cadastra';
 import { useNavigate } from 'react-router-dom'
+import LogoLink from './Logo';
 
 function ProductsList() {
   const [products, setProducts] = useState([]);
@@ -77,6 +78,9 @@ function ProductsList() {
 
   return (
     <div>
+      <LogoLink
+        logoUrl="https://manhart-performance.de/wp-content/uploads/2022/10/McLaren-Logo.png"
+      />
       <h1>Lista de Produtos</h1>
       <table>
         <thead>

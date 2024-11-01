@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import './Login.css'
+import LogoLink from './Logo';
+import HalfOutImage from './HalfOutImage';
 
 function Login() {
     const [ email, setEmail ] = useState('');
@@ -34,7 +36,10 @@ function Login() {
 
     return (
         <div>
-            <h1>Tela Login</h1>
+            <LogoLink
+                logoUrl="https://manhart-performance.de/wp-content/uploads/2022/10/McLaren-Logo.png"
+            />
+            <h1>Login</h1>
             <form onSubmit={handlesubmit}>
                 <div>
                     <label>

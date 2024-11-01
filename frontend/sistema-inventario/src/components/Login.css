@@ -1,8 +1,19 @@
 body {
-    background-color: #1D1D1B; 
-    color: #FFFFFF;
-    font-family: Arial, sans-serif;
+  background-image: url('./mclaren.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #FFFFFF;
+    font-family: 'McLaren', sans-serif;
   }
+
+  @font-face {
+    font-family: 'McLaren';
+    src: url('./fonts/mclaren.woff2') format('woff2'),
+         url('./fonts/mclaren.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
   
   h1 {
     text-align: center;
@@ -11,8 +22,10 @@ body {
   }
   
   form {
-    width: 80%;
-    max-width: 400px;
+    width: 85%;
+    align-items: center;
+    justify-content: center;
+    max-width: 500px;
     margin: 0 auto;
     background-color: #2C2C2C;
     padding: 20px;

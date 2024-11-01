@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './Cadastra.css'
 import { useNavigate } from 'react-router-dom'
 import ProductsList from './QuadroProdutos'
+import LogoLink from './Logo'
 
 function Cadastra() {
 
@@ -44,6 +45,9 @@ function Cadastra() {
 
     return(
         <div>
+            <LogoLink
+                logoUrl="https://manhart-performance.de/wp-content/uploads/2022/10/McLaren-Logo.png"
+            />
             <h1>Tela de Cadastro de inventário</h1>
             <div className="inventory-form">
                 <form onSubmit={handleSubmit}>
