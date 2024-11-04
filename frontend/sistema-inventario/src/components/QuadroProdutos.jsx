@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import './QuadroProdutos.css'
+import './QuadroProdutos.css';
 import Cadastra from './Cadastra';
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 import LogoLink from './Logo';
 
 function ProductsList() {
@@ -81,15 +81,20 @@ function ProductsList() {
       <LogoLink
         logoUrl="https://manhart-performance.de/wp-content/uploads/2022/10/McLaren-Logo.png"
       />
-      <h1>Lista de Produtos</h1>
+      <h1>Controle de Peças McLaren</h1>
       <table>
         <thead>
           <tr>
             <th>Nome</th>
-            <th>Marca</th>
+            <th>Modelo Compatível</th>
+            <th>Número de Série</th>
+            <th>Material</th>
             <th>Quantidade</th>
             <th>Preço Unitário</th>
-            <th>Descrição</th>
+            <th>Localização</th>
+            <th>Status</th>
+            <th>Fornecedor</th>
+            <th>Certificado de Qualidade</th>
             <th>Total</th>
             <th>Ações</th>
           </tr>
@@ -110,8 +115,24 @@ function ProductsList() {
                   <td>
                     <input
                       type="text"
-                      name="brand"
-                      value={editedFields.brand}
+                      name="model"
+                      value={editedFields.model}
+                      onChange={handleChange}
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      name="serialNumber"
+                      value={editedFields.serialNumber}
+                      onChange={handleChange}
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      name="material"
+                      value={editedFields.material}
                       onChange={handleChange}
                     />
                   </td>
@@ -134,8 +155,32 @@ function ProductsList() {
                   <td>
                     <input
                       type="text"
-                      name="description"
-                      value={editedFields.description}
+                      name="location"
+                      value={editedFields.location}
+                      onChange={handleChange}
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      name="status"
+                      value={editedFields.status}
+                      onChange={handleChange}
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      name="supplier"
+                      value={editedFields.supplier}
+                      onChange={handleChange}
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      name="qualityCertificate"
+                      value={editedFields.qualityCertificate}
                       onChange={handleChange}
                     />
                   </td>
@@ -148,10 +193,15 @@ function ProductsList() {
               ) : (
                 <>
                   <td>{product.name}</td>
-                  <td>{product.brand}</td>
+                  <td>{product.model}</td>
+                  <td>{product.serialNumber}</td>
+                  <td>{product.material}</td>
                   <td>{product.quantity}</td>
                   <td>R$ {product.price.toFixed(2)}</td>
-                  <td>{product.description}</td>
+                  <td>{product.location}</td>
+                  <td>{product.status}</td>
+                  <td>{product.supplier}</td>
+                  <td>{product.qualityCertificate}</td>
                   <td>R$ {(product.price * product.quantity).toFixed(2)}</td>
                   <td>
                     <button onClick={() => handleEdit(product)}>Editar</button>
@@ -164,13 +214,10 @@ function ProductsList() {
         </tbody>
       </table>
       <h3>Valor Total do Inventário: R$ {totalValue.toFixed(2)}</h3>
-      <div className='botaoCadastra'>
-        <button  onClick={() => navigate('/cadastra')}>
-          Cadastrar mais produtos
-        </button>
+      <div className="botaoCadastra">
+        <button onClick={() => navigate('/cadastra')}>Cadastrar mais produtos</button>
       </div>
     </div>
-    
   );
 }
 
